@@ -1,4 +1,3 @@
-
 def validate_ip(ip):
     parts = ip.split(".")
 
@@ -16,7 +15,9 @@ def validate_ip(ip):
     return True
 
 
-def main(logg = []):
+def main():
+    logg = []
+
     while True:
         print("\n= NÄTVERKSVERKTYG =")
         print("1. Validera IP-adress")
@@ -28,43 +29,41 @@ def main(logg = []):
 
         if choice == "1":
             ip = input("Ange IP-adress: ").strip()
-if validate_ip(ip):
-    print(f"{ip} är en giltig IP-adress.")
-    logg.append(f"IP {ip} - giltig")
-else:
-    print(f"{ip} är inte en giltig IP-adress.")
-    logg.append(f"IP {ip} - ogiltig")
 
-                       else:
+            if validate_ip(ip):
+                print(f"{ip} är en giltig IP-adress.")
+                logg.append(f"IP {ip} - giltig")
+            else:
                 print(f"{ip} är inte en giltig IP-adress.")
-       
-elif choice == "2":
-    port_input = input("Ange port: ").strip()
+                logg.append(f"IP {ip} - ogiltig")
 
-    if not port_input.isdigit():
-        print(f"{port_input} är inte en giltig port.")
-        logg.append(f"Port {port_input} - ogiltig")
-    else:
-        port = int(port_input)
-        if 1 <= port <= 65535:
-            print(f"{port} är en giltig port.")
-            logg.append(f"Port {port} - giltig")
-        else:
-            print(f"{port} är inte en giltig port.")
-            logg.append(f"Port {port} - ogiltig")
+        elif choice == "2":
+            port_input = input("Ange port: ").strip()
 
- elif choice == "3":
-    print("\n= LOGG =")
-    if not logg:
-        print("Ingen logg ännu.")
-    else:
-        for i, entry in enumerate(logg, 1):
-            print(f"{i}. {entry}")
+            if not port_input.isdigit():
+                print(f"{port_input} är inte en giltig port.")
+                logg.append(f"Port {port_input} - ogiltig")
+            else:
+                port = int(port_input)
+                if 1 <= port <= 65535:
+                    print(f"{port} är en giltig port.")
+                    logg.append(f"Port {port} - giltig")
+                else:
+                    print(f"{port} är inte en giltig port.")
+                    logg.append(f"Port {port} - ogiltig")
 
-elif choice == "4":
-    print(f"Totalt antal valideringar: {len(logg)}")
-    print("Avslutar.")
-    break
+        elif choice == "3":
+            print("\n= LOGG =")
+            if not logg:
+                print("Ingen logg ännu.")
+            else:
+                for i, entry in enumerate(logg, 1):
+                    print(f"{i}. {entry}")
+
+        elif choice == "4":
+            print(f"Totalt antal valideringar: {len(logg)}")
+            print("Avslutar.")
+            break
 
         else:
             print("Ogiltigt val")
