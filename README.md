@@ -56,3 +56,105 @@ Alla valideringar sparas och visas i en lista.
 
 python networktool.py
 
+
+
+
+
+\# Network Tool
+
+
+
+\## Beskrivning
+
+Detta projekt är ett enkelt nätverksverktyg som är skrivet i både Python och C.
+
+
+
+Programmet kan:
+
+\- Validera IP-adresser
+
+\- Validera portar
+
+\- Visa logg
+
+\- Visa antal valideringar
+
+
+
+\---
+
+
+
+\## Hur man kör programmet
+
+
+
+\### Python
+
+```bash
+
+python networktool.py
+
+
+
+Reflektion
+
+Att arbeta med både C och Python visade tydliga skillnader.
+
+Python var enklare att använda eftersom det har inbyggda funktioner för stränghantering och listor. Det gjorde att IP-validering och loggning gick snabbare att implementera.
+
+C var mer komplext eftersom man måste hantera minne, datatyper och input manuellt. Det kräver mer kod för samma funktionalitet.
+
+Samtidigt ger C mer kontroll över hur programmet körs, medan Python är mer flexibelt och snabbare att utveckla i.
+
+Genom att implementera samma program i båda språken fick jag en bättre förståelse för deras styrkor och begränsningar.
+
+
+
+Reflektion
+
+Python
+
+
+
+Python är lättare att använda.
+
+Det är enklare att skriva kod och förstå programmet.
+
+Funktioner som split() och input() gör arbetet snabbare.
+
+
+
+C
+
+C är svårare.
+
+Man måste hantera minne och datatyper själv.
+
+Koden blir längre och mer komplex.
+
+
+
+Jämförelse (Comparison)
+
+
+
+Python är snabbare att utveckla.
+
+C ger mer kontroll men är svårare.
+
+
+
+Slutsats
+
+
+
+Python passar bättre för enkla program.
+
+C är bättre för avancerade system.
+
+
+
+
+
