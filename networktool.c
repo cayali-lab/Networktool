@@ -1,7 +1,30 @@
 #include <stdio.h>
+#include <string.h>
+
+int validate_ip(char ip[]) {
+    int a, b, c, d;
+    char extra;
+
+    if (sscanf(ip, "%d.%d.%d.%d%c", &a, &b, &c, &d, &extra) != 4) {
+        return 0;
+    }
+
+    if (a < 0 || a > 255) return 0;
+    if (b < 0 || b > 255) return 0;
+    if (c < 0 || c > 255) return 0;
+    if (d < 0 || d > 255) return 0;
+
+    return 1;
+}
+
+int validate_port(int port) {
+    return port >= 1 && port <= 65535;
+}
 
 int main() {
     int choice;
+    char ip[100];
+    int port;
 
     while (1) {
         printf("\n= NÄTVERKSVERKTYG =\n");
@@ -14,15 +37,33 @@ int main() {
         scanf("%d", &choice);
 
         if (choice == 1) {
-            printf("IP-validering kommer snart\n");
+            printf("Ange IP-adress: ");
+            scanf("%s", ip);
+
+            if (validate_ip(ip)) {
+                printf("%s är en giltig IP-adress.\n", ip);
+            } else {
+                printf("%s är inte en giltig IP-adress.\n", ip);
+            }
+
         } else if (choice == 2) {
-            printf("Port-validering kommer snart\n");
+            printf("Ange port: ");
+            scanf("%d", &port);
+
+            if (validate_port(port)) {
+                printf("%d är en giltig port.\n", port);
+            } else {
+                printf("%d är inte en giltig port.\n", port);
+            }
+
         } else if (choice == 3) {
             printf("Logg kommer snart\n");
+
         } else if (choice == 4) {
             printf("Totalt antal valideringar: 0\n");
             printf("Avslutar.\n");
             break;
+
         } else {
             printf("Ogiltigt val\n");
         }
