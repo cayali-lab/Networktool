@@ -155,6 +155,31 @@ Python passar bättre för enkla program.
 C är bättre för avancerade system.
 
 
+## Köra programmet (Hur man kör)
+
+### Python
+python networktool.py
+
+### C
+gcc networktool.c -o networktool
+./networktool
+
+---
+
+## Reflektion
+
+Det var enklare att skriva programmet i Python eftersom språket har enklare syntax och färdiga funktioner.
+
+I C var det svårare eftersom man måste hantera variabler, minne och input mer manuellt.
+
+Till exempel var IP-validering mer komplicerad i C medan det var enklare i Python.
+
+Logg-funktionen var också enklare att implementera i Python eftersom listor är inbyggda.
+
+I C behövde man skapa egna arrayer och hantera index manuellt.
+
+Genom denna uppgift förstår jag bättre skillnaden mellan kompilerade språk (C) och tolkade språk (Python).
+
 
 
 
